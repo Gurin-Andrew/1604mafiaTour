@@ -558,7 +558,7 @@ footer {
 @media (min-width: 1025px) {
     body {
         background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-            url('main_bg.jpg') center/cover no-repeat;
+            url('main_bg.webp') center/cover no-repeat;
         background-attachment: fixed;
     }
 
