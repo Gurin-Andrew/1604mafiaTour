@@ -103,9 +103,52 @@ h1 {
 
 .countdown-container {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
     justify-content: center;
     margin-bottom: 35px;
+}
+
+.countdown-timer {
+    display: grid;
+    grid-template-columns: minmax(2.5rem, 1fr) auto minmax(2.5rem, 1fr) auto minmax(
+            2.5rem,
+            1fr
+        );
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: baseline;
+    column-gap: clamp(0.2rem, 1.5vw, 0.5rem);
+    row-gap: 0.35rem;
+    width: 100%;
+    max-width: min(100%, 22rem);
+}
+
+.countdown-timer .timer-sep {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+}
+
+.countdown-timer .timer-label-gap {
+    min-height: 1em;
+}
+
+.countdown-container--expired .countdown-timer {
+    display: none !important;
+}
+
+.countdown-expired {
+    margin: 0;
+    max-width: 28rem;
+    text-align: center;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.25;
+    color: #fff;
+    letter-spacing: 0.02em;
 }
 
 .timer-value {
@@ -223,6 +266,7 @@ h2 {
     padding: 30px;
     border-radius: 20px;
     border: 1px solid #333;
+    text-align: left;
 }
 
 .day-header {
@@ -241,33 +285,51 @@ h2 {
 }
 
 .time-list {
+    display: grid;
+    grid-template-columns: minmax(4.75rem, auto) minmax(0, 1fr);
+    column-gap: 0;
+    row-gap: 0;
+    align-items: stretch;
     list-style: none;
     padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .time-list li {
-    padding: 12px 0;
-    border-bottom: 1px dotted #444;
-    display: flex;
-    gap: 15px;
+    display: contents;
+}
+
+.time-list .time-slot {
+    padding: 12px 14px;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.time-list .time-list__text {
+    padding: 12px 14px;
+    border-bottom: 1px solid #333;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.time-list .time-list__text:last-child {
+    border-bottom: none;
+}
+
+.time-list .time-slot:nth-last-child(2) {
+    border-bottom: none;
 }
 
 .time-slot {
     color: var(--accent-red);
     font-weight: bold;
-    min-width: 60px;
-}
-
-.time-slot--gold {
-    color: #ffd700;
-    font-weight: bold;
-    min-width: 60px;
-}
-
-.highlight {
-    background: var(--accent-red);
-    padding: 2px 6px;
-    border-radius: 4px;
 }
 
 /* ——— Локация ——— */
@@ -590,10 +652,14 @@ footer {
         margin-bottom: 6px !important;
     }
 
-    .time-list li {
-        padding: 14px 0;
-        line-height: 1.2;
+    .time-list .time-slot {
+        padding: 14px 12px;
+    }
+
+    .time-list .time-list__text {
+        padding: 14px 12px;
         font-size: 0.95rem;
+        line-height: 1.2;
     }
 
     .location-info h3 {
@@ -610,16 +676,18 @@ footer {
 
     .photo-column {
         order: 1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 15px;
         margin-top: 25px;
+        width: 100%;
     }
 
     .photo-column img {
-        height: 150px;
         width: 100%;
+        height: auto;
         border-radius: 20px;
+        display: block;
     }
 
     .map-wrapper {
@@ -675,5 +743,149 @@ footer {
     .judge-card {
         width: 220px;
         margin: 0 auto;
+    }
+}
+.prizes-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+}
+.prizes-col--photo {
+    flex: 0 1 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prizes-col--content {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 26rem;
+}
+
+.prizes-col__title {
+    width: 100%;
+    text-align: center;
+}
+
+.prize-title {
+    display: inline-block;
+    background: var(--accent-red);
+    color: #fff;
+    padding: 10px 45px;
+    border-radius: 50px;
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    font-weight: 900;
+}
+
+.prize-img {
+    width: 100%;
+    max-width: 396px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.prizes-detail {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.prizes-detail__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.prizes-detail__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.prizes-detail__icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    box-sizing: border-box;
+}
+
+img.prizes-detail__icon {
+    border: none;
+    background: transparent;
+    object-fit: contain;
+    padding: 0;
+}
+
+.prizes-detail__text {
+    font-size: 0.98rem;
+    line-height: 1.35;
+}
+
+.prizes-detail__amount {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.prizes-detail__nomination-line {
+    margin: 1.25rem 0 0;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+    .prizes-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        align-items: start;
+        justify-items: center;
+        column-gap: 8px;
+        row-gap: 1.25rem;
+    }
+
+    .prizes-container > .prizes-col--photo:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .prizes-container > .prizes-col--photo:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .prizes-col--content {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        flex: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .prizes-col--photo {
+        flex: unset;
+        width: 100%;
+    }
+
+    .prizes-col--photo .prize-img {
+        max-width: 100%;
     }
 }

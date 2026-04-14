@@ -28,19 +28,27 @@
         </a>
         <div class="tour-name">К 7-летию клуба 1604</div>
         <div class="date">18 — 19 АПРЕЛЯ</div>
-        <div class="countdown-container">
-          <div class="timer-item">
-            <span id="days" class="timer-value">00</span
-            ><span class="timer-label">дней</span>
+        <div id="countdown-container" class="countdown-container">
+          <div id="countdown-timer" class="countdown-timer">
+            <span id="days" class="timer-value">00</span>
+            <span class="timer-sep" aria-hidden="true">:</span>
+            <span id="hours" class="timer-value">00</span>
+            <span class="timer-sep" aria-hidden="true">:</span>
+            <span id="minutes" class="timer-value">00</span>
+            <span class="timer-label">дней</span>
+            <span class="timer-label-gap" aria-hidden="true"></span>
+            <span class="timer-label">часов</span>
+            <span class="timer-label-gap" aria-hidden="true"></span>
+            <span class="timer-label">минут</span>
           </div>
-          <div class="timer-item">
-            <span id="hours" class="timer-value">00</span
-            ><span class="timer-label">часов</span>
-          </div>
-          <div class="timer-item">
-            <span id="minutes" class="timer-value">00</span
-            ><span class="timer-label">минут</span>
-          </div>
+          <p
+            id="countdown-expired"
+            class="countdown-expired"
+            hidden
+            aria-live="polite"
+          >
+            Турнир уже начался — удачи участникам!
+          </p>
         </div>
         <a
           href="https://www.donationalerts.com/r/naskakudrik1604"
@@ -90,11 +98,26 @@
               </div>
             </div>
             <ul class="time-list">
-              <li><span class="time-slot">09:45</span> Сбор участников</li>
-              <li><span class="time-slot">10:10</span> Открытие</li>
-              <li><span class="highlight">10:30</span> Старт 1-й игры</li>
-              <li><span class="time-slot">14:00</span> Обед</li>
-              <li><span class="time-slot">20:30</span> Конец дня</li>
+              <li>
+                <span class="time-slot">09:45</span>
+                <span class="time-list__text">Сбор участников</span>
+              </li>
+              <li>
+                <span class="time-slot">10:10</span>
+                <span class="time-list__text">Открытие</span>
+              </li>
+              <li>
+                <span class="time-slot">10:30</span>
+                <span class="time-list__text">Старт 1-й игры</span>
+              </li>
+              <li>
+                <span class="time-slot">14:00</span>
+                <span class="time-list__text">Обед</span>
+              </li>
+              <li>
+                <span class="time-slot">20:30</span>
+                <span class="time-list__text">Конец дня</span>
+              </li>
             </ul>
           </div>
           <div class="day-block">
@@ -106,13 +129,65 @@
               </div>
             </div>
             <ul class="time-list">
-              <li><span class="time-slot">10:30</span> Начало игр</li>
-              <li><span class="highlight">14:15</span> Праздничный торт 🎂</li>
-              <li><span class="time-slot">15:00</span> Финал</li>
               <li>
-                <span class="time-slot time-slot--gold">20:00</span> Награждение
+                <span class="time-slot">10:30</span>
+                <span class="time-list__text">Начало игр</span>
+              </li>
+              <li>
+                <span class="time-slot">14:15</span>
+                <span class="time-list__text">Праздничный торт 🎂</span>
+              </li>
+              <li>
+                <span class="time-slot">15:00</span>
+                <span class="time-list__text">Финал</span>
+              </li>
+              <li>
+                <span class="time-slot">20:00</span>
+                <span class="time-list__text">Награждение</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+      <section id="prizes">
+        <h2>Призы</h2>
+        <div class="prizes-container">
+          <div class="prizes-col prizes-col--photo">
+            <img src="кубки.jpg" class="prize-img" alt="" />
+          </div>
+          <div class="prizes-col prizes-col--content">
+
+            <div class="description prizes-detail">
+              <div class="prizes-detail__rows">
+                <div class="prizes-detail__row">
+                  <img class="prizes-detail__icon" src="gold.png" alt="1 место" />
+                  <div class="prizes-detail__text">
+                    <span class="prizes-detail__amount">40 000 ₽</span>
+                  </div>
+                </div>
+                <div class="prizes-detail__row">
+                  <img class="prizes-detail__icon" src="silver.png" alt="2 место" />
+                  <div class="prizes-detail__text">
+                    <span class="prizes-detail__amount">25 000 ₽</span>
+                  </div>
+                </div>
+                <div class="prizes-detail__row">
+                  <img class="prizes-detail__icon" src="bronze.png" alt="3 место" />
+                  <div class="prizes-detail__text">
+                    <span class="prizes-detail__amount">15 000 ₽</span>
+                  </div>
+                </div>
+              </div>
+              <p class="prizes-detail__nomination-line">
+                Номинация: 2&nbsp;000&nbsp;₽
+              </p>
+            </div>
+            <div class="prizes-col__title">
+              <span class="prize-title">90 000 ₽</span>
+            </div>
+          </div>
+          <div class="prizes-col prizes-col--photo">
+            <img src="медали.jpg" class="prize-img" alt="" />
           </div>
         </div>
       </section>

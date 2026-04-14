@@ -20,9 +20,9 @@ const partnerData = {
         html: 'Самая сочная шаурма в городе. Поддержка финалистов!<br><a href="https://vk.com/club209601713" target="_blank">ВКонтакте</a>',
     },
     rvv: {
-        title: '«Руки ВВерх!» Бар',
+        title: '«Руки Вверх!» Бар',
         img: 'rvv_promo.jpg',
-        html: 'Это культовое место, совмещающее в себе бар, ресторан, диско-клуб, караоке и концертную площадку! К нашему турниру РукиВверх! Бар подготовил 3 подарочных сертификата на приятную сумму!.<br><a href="https://go.2gis.com/EaXvY" target="_blank">Построить маршрут</a>',
+        html: 'Это культовое место, совмещающее в себе бар, ресторан, диско-клуб, караоке и концертную площадку! К нашему турниру Руки Вверх! Бар подготовил 3 подарочных сертификата на приятную сумму!<br><a href="https://go.2gis.com/EaXvY" target="_blank">Построить маршрут</a>',
     },
     fabrika: {
         title: 'Кальянная «Фабрика»',
@@ -59,9 +59,23 @@ function scrollToTop() {
 
 const eventDate = new Date('April 18, 2026 10:00:00').getTime();
 
+let countdownIntervalId;
+
 function tickCountdown() {
     const d = eventDate - Date.now();
-    if (d <= 0) return;
+    const wrap = document.getElementById('countdown-container');
+    const timerRoot = document.getElementById('countdown-timer');
+    const expiredEl = document.getElementById('countdown-expired');
+    if (d <= 0) {
+        wrap?.classList.add('countdown-container--expired');
+        if (timerRoot) timerRoot.hidden = true;
+        if (expiredEl) expiredEl.hidden = false;
+        if (countdownIntervalId) clearInterval(countdownIntervalId);
+        return;
+    }
+    wrap?.classList.remove('countdown-container--expired');
+    if (timerRoot) timerRoot.hidden = false;
+    if (expiredEl) expiredEl.hidden = true;
     document.getElementById('days').innerText = Math.floor(d / 86400000)
         .toString()
         .padStart(2, '0');
@@ -99,5 +113,5 @@ document.addEventListener('click', (e) => {
     }
 });
 
-setInterval(tickCountdown, 1000);
+countdownIntervalId = setInterval(tickCountdown, 1000);
 tickCountdown();
