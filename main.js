@@ -1,37 +1,37 @@
 const partnerData = {
     mts: {
         title: 'МТС Прогрессоры',
-        img: 'mts_promo.webp',
+        img: 'static/mts_promo.webp',
         html: 'Главный партнер! МТС поддерживает интеллектуальные инициативы Томска. Приложение «Прогрессоры» — экосистема бонусов для активных горожан.<br><a href="https://progressors.ru" target="_blank">Перейти на сайт</a>',
     },
     jobs: {
         title: 'Mister Jobs',
-        img: 'jobs_store.webp',
+        img: 'static/jobs_store.webp',
         html: 'Торгово-сервисный центр по ремонту и продаже техники! Mr.Jobs предоставляет оборудование для трансляций.<br><a href="https://vk.com/club165712322" target="_blank">ВКонтакте</a> | <a href="https://t.me/misterjobs_ru" target="_blank">Telegram</a>',
     },
     gangster: {
         title: 'Gangster’s Sushi',
-        img: 'sushi_promo.webp',
+        img: 'static/sushi_promo.webp',
         html: 'Доставка авторских роллов. К нашему турниру ребята организуют большую доставку!<br><a href="https://gangsta-sushi.ru" target="_blank">Заказать на сайте</a>',
     },
     bezumno: {
         title: 'БЕЗУМНО ШАУРМА',
-        img: 'shaurma_promo.webp',
+        img: 'static/shaurma_promo.webp',
         html: 'Самая сочная шаурма в городе. Поддержка финалистов!<br><a href="https://vk.com/club209601713" target="_blank">ВКонтакте</a>',
     },
     rvv: {
         title: '«Руки Вверх!» Бар',
-        img: 'rvv_promo.webp',
+        img: 'static/rvv_promo.webp',
         html: 'Это культовое место, совмещающее в себе бар, ресторан, диско-клуб, караоке и концертную площадку! К нашему турниру Руки Вверх! Бар подготовил 3 подарочных сертификата на приятную сумму!<br><a href="https://go.2gis.com/EaXvY" target="_blank">Построить маршрут</a>',
     },
     fabrika: {
         title: 'Кальянная «Фабрика»',
-        img: 'fabrika_interior.webp',
+        img: 'static/fabrika_interior.webp',
         html: 'Отдых и стиль в центре города. Победители нашего турнира получат сертификат на вкуснейший дымный кальян!<br><a href="https://vk.com/club87733396" target="_blank">Томск</a> | <a href="https://vk.com/club18435560" target="_blank">Новосибирск</a> | <a href="https://vk.com/club109633493" target="_blank">Шерегеш</a>',
     },
     bonjour: {
         title: 'Мастерская Bonjour',
-        img: 'cups_promo.webp',
+        img: 'static/cups_promo.webp',
         html: 'Стильная наградная продукция в наличии и под заказ! Промокод "Томск1604" на бесплатный макет.<br><a href="https://vk.com/bonjour_altai" target="_blank">ВКонтакте</a>',
     },
 };
