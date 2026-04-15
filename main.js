@@ -29,6 +29,11 @@ const partnerData = {
         img: 'static/fabrika_interior.webp',
         html: 'Отдых и стиль в центре города. Победители нашего турнира получат сертификат на вкуснейший дымный кальян!<br><a href="https://vk.com/club87733396" target="_blank">Томск</a> | <a href="https://vk.com/club18435560" target="_blank">Новосибирск</a> | <a href="https://vk.com/club109633493" target="_blank">Шерегеш</a>',
     },
+    'gorodskie-cveti': {
+        title: 'Городские цветы',
+        img: 'static/cveti_promo.webp',
+        html: 'Только свежие цветы! Осуществляют круглосуточную доставку цветов в Томске и Северске. На день рождения клуба предоставляют подарочные сертификаты на букеты. По промокоду «1604» для вас скидка 11%!',
+    },
     bonjour: {
         title: 'Мастерская Bonjour',
         img: 'static/cups_promo.webp',
