@@ -66,6 +66,15 @@ body.modal-open {
     color: inherit;
 }
 
+.hero-logo {
+    display: block;
+    max-width: min(92vw, 380px);
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
 .fsm-badge {
     background: var(--accent-red);
     padding: 6px 18px;
